@@ -1,0 +1,7 @@
+{
+  "name": "bitwarden-keeper",
+  "label": "Bitwarden Keeper",
+  "description": "Persistent multi-account Bitwarden sessions: status and state for the desktop pane.",
+  "version": "0.1.1",
+  "api": "plugin_api.py"
+}

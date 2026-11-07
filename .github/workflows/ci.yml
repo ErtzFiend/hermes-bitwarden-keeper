@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch pinned Hermes base for the plugin runtime imports
+        run: |
+          git clone --depth 1 https://github.com/NousResearch/hermes-agent.git /tmp/hermes
+          git -C /tmp/hermes fetch --depth 1 origin 2bd378ed1b8d6bf2192cb26e0a55ff3091e6bd19
+          git -C /tmp/hermes checkout FETCH_HEAD
+          echo "HERMES_SRC=/tmp/hermes" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install test dependencies
+        run: pip install pytest fastapi httpx ruamel.yaml pyyaml
+
+      - name: Run tests (fake bw shim, disposable HERMES_HOME)
+        run: ./run_tests.sh

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "11111111-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+    "type": 1,
+    "name": "Example Web App",
+    "creationDate": "2026-01-02T03:04:05Z",
+    "login": {
+      "username": "user1",
+      "password": "fake-password-1",
+      "totp": null,
+      "uris": [{"uri": "https://app.example.com"}]
+    }
+  },
+  {
+    "id": "22222222-bbbb-4bbb-8bbb-bbbbbbbbbbb2",
+    "type": 1,
+    "name": "Example Router",
+    "creationDate": "2026-02-03T04:05:06Z",
+    "login": {
+      "username": "user2",
+      "password": "fake-password-2",
+      "totp": "JBSWY3DPEHPK3PXP",
+      "uris": [{"uri": "https://10.0.0.1:8443"}]
+    }
+  },
+  {
+    "id": "33333333-cccc-4ccc-8ccc-cccccccccc3",
+    "type": 2,
+    "name": "Example secure note (not a login)",
+    "creationDate": "2026-03-04T05:06:07Z",
+    "login": null
+  }
+]

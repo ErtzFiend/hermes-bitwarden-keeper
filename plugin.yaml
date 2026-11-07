@@ -1,0 +1,22 @@
+name: bitwarden-keeper
+version: 0.1.1
+description: "Bitwarden Keeper: persistent multi-account Bitwarden sign-in — connect once, stays signed in until you explicitly disconnect; per-account isolation, desktop configuration pane, statusbar lock chip."
+author: Jacob Hodge
+kind: standalone
+homepage: https://github.com/ErtzFiend/hermes-bitwarden-keeper
+provides_tools:
+  - bitwarden-keeper
+provides_cli_commands:
+  - bitwarden-keeper
+provides_hooks: []
+platforms:
+  - linux
+  - windows
+  - darwin
+dependencies:
+  hermes-agent: ">=0.22.0"
+notes: >-
+  The vault backend (bwk: handles for browser_vault fills) is registered
+  best-effort: core admits login-backend registration only from bundled or
+  catalog-installed plugins, so local installs degrade to tool + CLI access.
+  Requires the `bw` CLI; per-account isolation via BITWARDENCLI_APPDATA_DIR.
